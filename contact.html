@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="At logitrak we are a team of passionate people
+    who are dedicated to ensuring your products and shipments are delivered on time and on
+    budget.">
+    <meta name="keywords" content="Logitrak, Logistics, Delivery, Delivery Services">
+    <title>Title</title>
+    <link href="./CSS/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen" style="font-family: 'Inter', sans-serif;">
+    <header class="bg-white shadow-md py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center relative z-40">
+            <h1 class="text-2xl font-bold text-amber-600 rounded-md">LogiTrack Solutions</h1>
+            <div class="md:flex md:items-center">
+                <!-- Hamburger for mobile view -->
+                <button aria-label="nav-button" id="hamburger-button" class="md:hidden text-gray-700 hover:text-amber-600 focus:outline-none hover:scale-125 transition-transform duration-300">
+                    <i class="bi bi-list" style="font-size: 2rem; color: darkgray;"></i>
+                </button>
+                <!-- Main navigation links - hidden by default on mobile (mobile menu displays on hamburger click) -->
+                <ul id="nav-menu" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0 absolute md:relative bg-white md:bg-transparent w-full md:w-auto p-4 md:p-0 rounded-md shadow-lg md:shadow-none top-full left-0">
+                    <li>
+                        <a href="index.html" class="nav-button font-semibold transition-colors duration-300 p-2 rounded-md text-gray-700 hover:text-amber-600 hover:bg-gray-100 w-full text-left">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="nav-button font-semibold transition-colors duration-300 p-2 rounded-md text-gray-700 hover:text-amber-600 hover:bg-gray-100 w-full text-left">About Us</a>
+                    </li>
+                    <li>
+                        <a href="bundles.html" class="nav-button font-semibold transition-colors duration-300 p-2 rounded-md text-gray-700 hover:text-amber-600 hover:bg-gray-100 w-full text-left">Bundles</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="nav-button font-semibold transition-colors duration-300 p-2 rounded-md text-gray-700 hover:text-amber-600 hover:bg-gray-100 w-full text-left">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="mx-auto px-4 py-4 xl:flex flex-col justify-center items-center">
+        <div class="container mx-auto px-4 flex flex-col justify-center items-center mt-10">
+            <h2 class="text-gray-700 font-bold text-3xl">Contact Us</h2>
+            <p class="mt-4 text-lg">We would love to hear from you about any loads you may want us to ship.</p>
+            <p class="text-lg">Contact us on the below form, and one of our advisors will reach out to you within 24 hours.</p>
+        </div>
+        <div class="container mx-auto px-4 flex flex-col justify-center items-center mt-10">
+            <form class="container flex flex-col gap-2" id="contactForm" onsubmit="return preventReload()">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="First Name..." onkeyup="nameCheck(fname, Validator1)" class="border-2 border-gray-300 rounded-md p-1.5" required>
+                <p id="Validator1" class="text-red-500 hidden" >*First name cannot be numbers<br>*Text must not be empty</p>
+                <label for="sname" class="mt-4">Last Name</label>
+                <input type="text" id="sname" name="lastname" placeholder="Last Name.." onkeyup="nameCheck(sname, Validator2)" class="border-2 border-gray-300 rounded-md p-1.5" required>
+                <p id="Validator2" class="text-red-500 hidden" >*First name cannot be numbers<br>*Text must not be empty</p>
+                <label for="companyname" class="mt-4">Company Name</label>
+                <input type="text" id="companyname" name="companyname" placeholder="Company Name.." onkeyup="otherCheck(companyname, Validator3)" class="border-2 border-gray-300 rounded-md p-1.5" required>
+                <p class="hidden text-red-500" id="Validator3">*Text must not be empty</p>
+                <label for="email" class="mt-4">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email.." onkeyup="emailCheck(email, Validator4)" class="border-2 border-gray-300 rounded-md p-1.5" required>
+                <p class="hidden text-red-500" id="Validator4">*Email must be valid & contain '@'</p>
+                <label for="subject" class="mt-4">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject.." onkeyup="otherCheck(subject, Validator5)" class="border-2 border-gray-300 rounded-md p-1.5" required>
+                <p class="hidden text-red-500" id="Validator5">*Text must not be empty</p>
+                <label for="message" class="mt-4">Message</label>
+                <textarea id="message" name="message" placeholder="Message.." style="max-height:200px" class="border-2 border-gray-300 rounded-lg p-1.5" onkeyup="otherCheck(message, Validator6)" required></textarea>
+                <p class="hidden text-red-500" id="Validator6">*Text must not be empty</p>
+            </form>
+            <div class="container flex flex-col justify-center items-center mt-10">
+                <button form="contactForm" type="submit" class="border-2 px-12 py-3 rounded-xl bg-amber-600 text-gray-800 font-bold">Submit</button>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-gray-800 text-gray-300 flex flex-col md:flex-row justify-between items-center mt-auto pt-10">
+        <div class="pt-10 md:pb-10 px-8">
+            <p>© <span id="date"></span> Logitrak Solutions. All rights reserved.</p>
+            <div class="grid grid-cols-4 pt-4">
+                <a href="index.html" class="flex justify-center items-center hover:scale-125 hover:text-white duration-300">Home</a>
+                <a href="about.html" class="flex justify-center items-center hover:scale-125 hover:text-white duration-300">About</a>
+                <a href="bundles.html" class="flex justify-center items-center hover:scale-125 hover:text-white duration-300">Bundles</a>
+                <a href="contact.html" class="flex justify-center items-center hover:scale-125 hover:text-white duration-300">Contact</a>
+            </div>
+        </div>
+        <div class="pt-10 pb-10 px-8 grid grid-cols-3 gap-1">
+            <div class="col-span-3 flex flex-col justify-center items-center">
+                <p>Connect with us on all of our socials.</p>
+            </div>
+            <div class="col-span-3 flex flex-col justify-center items-center">
+                <div class="grid grid-cols-5 gap-4 text-xl pt-4">
+                    <a href="" class="hover:scale-150 duration-300" aria-label="Visit our Facebook Page"><i class="bi bi-facebook text-blue-600 bg-white flex items-center justify-center rounded-xl " ></i></a>
+                    <a href="" class="hover:scale-150 duration-300" aria-label="Visit our Instagram Page"><i class="bi bi-instagram text-white bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] flex items-center justify-center rounded-xl"></i></a>
+                    <a href="" class="hover:scale-150 duration-300" aria-label="Visit our Twitter Page"><i class="bi bi-twitter-x text-white flex items-center justify-center"></i></a>
+                    <a href="" class="hover:scale-150 duration-300" aria-label="Visit our Youtube Channel"><i class="bi bi-youtube text-red-500 bg-white flex items-center justify-center rounded-none"></i></a>
+                    <a href="" class="hover:scale-150 duration-300" aria-label="Visit our LinkedIn Page"><i class="bi bi-linkedin text-blue-600 bg-white flex items-center justify-center rounded-full"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Declaring variables for the nav buttons and menu buttons
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const navMenu = document.getElementById('nav-menu'); // The <ul> element
+
+        // Add click event listener to the hamburger button to toggle menu
+        hamburgerButton.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden'); // Toggle hidden class to show/hide the menu
+            navMenu.classList.toggle('flex'); // toggle flex class to show/hide the menu
+        });
+    </script>
+    <script>
+        let fname = document.getElementById('fname');
+        let sname = document.getElementById('sname');
+        let Validator1 = document.getElementById('Validator1');
+        let Validator2 = document.getElementById('Validator2');
+        let Validator3 = document.getElementById('Validator3');
+        let Validator4 = document.getElementById('Validator4');
+        let Validator5 = document.getElementById('Validator5');
+        let Validator6 = document.getElementById('Validator6');
+
+        function nameCheck(name, Validator) {
+            let text = name.value
+            let containsNumbers = /[0-9]/;
+            let result = containsNumbers.test(text);
+            console.log(result);
+            if (result === true || name.value === '') {
+                Validator.classList.remove('hidden');
+            } else{
+                Validator.classList.add('hidden');
+            }
+        }
+
+        function otherCheck(checkName, Validator) {
+            if (checkName.value === '') {
+                Validator.classList.remove('hidden');
+            } else {
+                Validator.classList.add('hidden');
+            }
+        }
+
+        function emailCheck(email, Validator) {
+            let text = email.value
+            let containsChar = /@/;
+            let result = containsChar.test(text);
+            console.log(result);
+            if (email.value === '' || result === false ) {
+                Validator.classList.remove('hidden');
+            } else {
+                Validator.classList.add('hidden');
+            }
+        }
+    </script>
+    <script>
+        function preventReload(){
+            console.log('Used to submit the form without reloading the browser');
+            alert('This is only for show')
+
+            return false;
+        }
+    </script>
+</body>
+</html>
