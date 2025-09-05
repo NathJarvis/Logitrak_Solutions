@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen" style="font-family: 'Inter', sans-serif;">
+<body class="bg-gray-100 flex flex-col min-h-screen" style="font-family: 'Inter', sans-serif;"> <!-- min-h-screen class used here as the page does not take up the full screen size on some devices so this helps the footer stay at the bottom -->
     <header class="bg-white shadow-md py-4">
         <nav class="container mx-auto px-4 flex justify-between items-center relative z-40">
             <h1 class="text-2xl font-bold text-amber-600 rounded-md">LogiTrack Solutions</h1>
@@ -39,14 +39,19 @@
             </div>
         </nav>
     </header>
+    <!-- Start of the contact form -->
     <main class="mx-auto px-4 py-4 xl:flex flex-col justify-center items-center">
         <div class="container mx-auto px-4 flex flex-col justify-center items-center mt-10">
             <h2 class="text-gray-700 font-bold text-3xl">Contact Us</h2>
             <p class="mt-4 text-lg">We would love to hear from you about any loads you may want us to ship.</p>
             <p class="text-lg">Contact us on the below form, and one of our advisors will reach out to you within 24 hours.</p>
         </div>
+        <!-- Main Body of the contact form.
+        Contact form contains dynamic validation by scripts hiding and unhiding <p> elements with instructions.
+        Contact form also contains the 'required' tag to ensure validation of the form. -->
+
         <div class="container mx-auto px-4 flex flex-col justify-center items-center mt-10">
-            <form class="container flex flex-col gap-2" id="contactForm" onsubmit="return preventReload()">
+            <form class="container flex flex-col gap-2" id="contactForm" onsubmit="return preventReload()"> <!-- Prevent reload script to stop the browser refreshing on submission -->
                 <label for="fname">First Name</label>
                 <input type="text" id="fname" name="firstname" placeholder="First Name..." onkeyup="nameCheck(fname, Validator1)" class="border-2 border-gray-300 rounded-md p-1.5" required>
                 <p id="Validator1" class="text-red-500 hidden" >*First name cannot be numbers<br>*Text must not be empty</p>
@@ -66,12 +71,14 @@
                 <textarea id="message" name="message" placeholder="Message.." style="max-height:200px" class="border-2 border-gray-300 rounded-lg p-1.5" onkeyup="otherCheck(message, Validator6)" required></textarea>
                 <p class="hidden text-red-500" id="Validator6">*Text must not be empty</p>
             </form>
+            <!-- Submit button for the form linked by the form ID -->
             <div class="container flex flex-col justify-center items-center mt-10">
                 <button form="contactForm" type="submit" class="border-2 px-12 py-3 rounded-xl bg-amber-600 text-gray-800 font-bold">Submit</button>
             </div>
         </div>
     </main>
-    <footer class="bg-gray-800 text-gray-300 flex flex-col md:flex-row justify-between items-center mt-auto pt-10">
+    <!-- Footer of the page containing page links, social links and copyright statement -->
+    <footer class="bg-gray-800 text-gray-300 flex flex-col md:flex-row justify-between items-center mt-auto">
         <div class="pt-10 md:pb-10 px-8">
             <p>© <span id="date"></span> Logitrak Solutions. All rights reserved.</p>
             <div class="grid grid-cols-4 pt-4">
@@ -81,11 +88,13 @@
                 <a href="contact.html" class="flex justify-center items-center hover:scale-125 hover:text-white duration-300">Contact</a>
             </div>
         </div>
+        <!-- Social links section -->
         <div class="pt-10 pb-10 px-8 grid grid-cols-3 gap-1">
             <div class="col-span-3 flex flex-col justify-center items-center">
                 <p>Connect with us on all of our socials.</p>
             </div>
             <div class="col-span-3 flex flex-col justify-center items-center">
+                <!-- Main grid for the social links -->
                 <div class="grid grid-cols-5 gap-4 text-xl pt-4">
                     <a href="" class="hover:scale-150 duration-300" aria-label="Visit our Facebook Page"><i class="bi bi-facebook text-blue-600 bg-white flex items-center justify-center rounded-xl " ></i></a>
                     <a href="" class="hover:scale-150 duration-300" aria-label="Visit our Instagram Page"><i class="bi bi-instagram text-white bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] flex items-center justify-center rounded-xl"></i></a>

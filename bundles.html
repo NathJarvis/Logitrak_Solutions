@@ -41,21 +41,24 @@
         </nav>
     </header>
     <main class="mx-auto px-4 py-4 flex flex-col -z-10 mt-8">
+        <!-- Title of the page with an introduction -->
         <div class="container mx-auto px-4 flex flex-col justify-center items-center">
             <h2 class="text-gray-700 font-bold text-3xl">Our Packages and Bundles</h2>
             <p class="mt-4 text-lg">No matter what your requirement may be, we are satisfied we will have a bundle that takes your interest.</p>
             <p class="text-lg">Browse below our bulk packages, price savings, and customer loyalty program.</p>
         </div>
+        <!-- Packages section of the page -->
         <div class="container mx-auto mt-20 text-gray-700">
             <h2 class="max-w-2xl text-3xl font-bold text-gray-700 mb-4">Packages</h2>
             <div class="container md:grid grid-cols-1 md:grid-cols-3 flex flex-col gap-2 mx-auto">
+                <!-- Bronze Package, smallest card on the left -->
                 <div class="border-4 border-yellow-900 py-2 px-2 col-span-1 row-start-6 row-span-4 rounded-lg flex flex-col justify-between shadow-xl">
                     <div class="flex flex-col items-center font-bold">
                         <h2 class="text-3xl mt-4">Bronze</h2>
                         <h3>Our most <em>Afforable</em> Package</h3>
                     </div>
                     <div class="font-bold flex flex-col items-center">
-                        <p class="mt-4 text-2xl">£8000</p>
+                        <p class="mt-4 text-2xl">£3000</p>
                         <p>Per Quater</p>
                     </div>
                     <div class="container">
@@ -67,6 +70,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Gold Package, middle of the grid and bigger than the other 2 cards -->
                 <div class="border-4 border-yellow-400 py-2 px-2 col-span-1 row-start-1 row-span-14 rounded-lg flex flex-col justify-between shadow-xl">
                     <div class="flex flex-col items-center font-bold">
                         <h2 class="text-3xl mt-4">Gold</h2>
@@ -87,13 +91,14 @@
                         </div>
                     </div>
                 </div>
+                <!-- Silver Package, bigger than the bronze but smaller than gold and on the right hand side -->
                 <div class="border-4 border-zinc-400 py-2 px-2 col-span-1 row-start-4 row-span-8 rounded-lg flex flex-col justify-between shadow-xl">
                     <div class="flex flex-col items-center font-bold">
                         <h2 class="text-3xl mt-4">Silver</h2>
                         <h3>Our most Prestige Package</h3>
                     </div>
                     <div class="font-bold flex flex-col items-center">
-                        <p class="mt-4 text-2xl">£8000</p>
+                        <p class="mt-4 text-2xl">£5000</p>
                         <p>Per Quater</p>
                     </div>
                     <div class="container">
@@ -108,9 +113,11 @@
                 </div>
             </div>
         </div>
+        <!-- main bundles setion of the page, contains data stored within tables -->
         <div class="container mx-auto mt-20 text-gray-700">
             <h2 class="max-w-2xl text-3xl font-bold text-gray-700">GH Bundles</h2>
             <p>If you are interested in any of our bundles, please head over to our contact page and send an enquiry with the bundle name included.</p>
+            <!-- Table 1 - General Halauge bundles -->
             <table class="container mx-auto mt-10">
                 <tr style="text-align: center;">
                     <th>Bundle No.</th>
@@ -136,6 +143,7 @@
             <div class="mt-10">
                 <h2 class="max-w-2xl text-3xl font-bold text-gray-700">ADR Bundles</h2>
                 <p>All of our ADR Bundles are priced Seperately, and we may also be able to give you a better discount than displayed, please head over to our contact page and send an enquiry with the bundle name included.</p>
+                <!-- Table 2 - ADR Halauge bundles -->
                 <table class="container mx-auto mt-10">
                     <tr style="text-align: center;">
                         <th>Bundle No.</th>
@@ -160,27 +168,27 @@
                 </table>
             </div>
         </div>
-        <div>
-            <h2 class="container text-2xl font-bold text-gray-700 mt-16 mb-8 mx-auto py-2">Need an idea on pricing?</h2>
-            <div class="container mx-auto px-4 py-4 border-2 rounded-xl border-amber-500 bg-white shadow-xl">
-                <h3 class="text-2xl font-bold bg-white text-gray-700 rounded-md mt-4 mb-8 flex justify-center align-center mx-auto px-4 py-2">Get A Delivery Estimate Now</h3>
-                <form class="px-4" onsubmit="return preventReload()">
-                    <div class="flex flex-col">
-                        <label for="weight-input" class="text-gray-700">Weight (In tons)</label>
-                        <input type="number" id="weight-input" class="border border-gray-300 rounded-md p-2" required>
-                        <label for="distance-input" class="text-gray-700">Distance (Miles)</label>
-                        <input type="number" id="distance-input" class="border border-gray-300 rounded-md p-2" required>
-                        <button id="delivery-estimate-button" class="bg-amber-600 text-black rounded-md p-2 mt-4">Get Estimate</button>
-                        <h2 class="text-xl font-bold text-gray-700 mt-8">Estimated Price:</h2>
-                        <p id="term1" class="text-gray-700 hidden">*Includes admin charge of 20%</p>
-                        <p id="term2" class="text-gray-700 mb-2 hidden">*Quotes under £50 incure a small order fee of £20</p>
-                        <p class="text-2xl font-bold text-amber-600" id="delivery-estimate-result"></p>
-                    </div>
-                </form>
-            </div>
+        <!-- Key feature of website, quick quote generator. uses scripts to generate a quick quote and a script to prevent the page reloading when form is submitted -->
+        <h2 class="container text-2xl font-bold text-gray-700 mt-16 mb-8 mx-auto py-2">Need an idea on pricing?</h2>
+        <div class="container mx-auto px-4 py-4 border-2 rounded-xl border-amber-500 bg-white shadow-xl">
+            <h3 class="text-2xl font-bold bg-white text-gray-700 rounded-md mt-4 mb-8 flex justify-center align-center mx-auto px-4 py-2">Get A Delivery Estimate Now</h3>
+            <form class="px-4" onsubmit="return preventReload()"> <!-- Prevent reload script to stop page reloading -->
+                <div class="flex flex-col">
+                    <label for="weight-input" class="text-gray-700">Weight (In tons)</label>
+                    <input type="number" id="weight-input" class="border border-gray-300 rounded-md p-2" required>
+                    <label for="distance-input" class="text-gray-700">Distance (Miles)</label>
+                    <input type="number" id="distance-input" class="border border-gray-300 rounded-md p-2" required>
+                    <button id="delivery-estimate-button" class="bg-amber-600 text-black rounded-md p-2 mt-4">Get Estimate</button>
+                    <h2 class="text-xl font-bold text-gray-700 mt-8">Estimated Price:</h2>
+                    <p id="term1" class="text-gray-700 hidden">*Includes admin charge of 20%</p>
+                    <p id="term2" class="text-gray-700 mb-2 hidden">*Quotes under £50 incure a small order fee of £20</p>
+                    <p class="text-2xl font-bold text-amber-600" id="delivery-estimate-result"></p> <!--element that is manipulated to display the price -->
+                </div>
+            </form>
         </div>
     </main>
-    <footer class="mt-20 bg-gray-800 text-gray-300 flex flex-col md:flex-row justify-between items-center">
+    <!-- Footer of the page containing page links, social links and copyright statement -->
+    <footer class="bg-gray-800 text-gray-300 flex flex-col md:flex-row justify-between items-center mt-auto">
         <div class="pt-10 md:pb-10 px-8">
             <p>© <span id="date"></span> Logitrak Solutions. All rights reserved.</p>
             <div class="grid grid-cols-4 pt-4">
@@ -190,11 +198,13 @@
                 <a href="contact.html" class="flex justify-center items-center hover:scale-125 hover:text-white duration-300">Contact</a>
             </div>
         </div>
+        <!-- Social links section -->
         <div class="pt-10 pb-10 px-8 grid grid-cols-3 gap-1">
             <div class="col-span-3 flex flex-col justify-center items-center">
                 <p>Connect with us on all of our socials.</p>
             </div>
             <div class="col-span-3 flex flex-col justify-center items-center">
+                <!-- Main grid for the social links -->
                 <div class="grid grid-cols-5 gap-4 text-xl pt-4">
                     <a href="" class="hover:scale-150 duration-300" aria-label="Visit our Facebook Page"><i class="bi bi-facebook text-blue-600 bg-white flex items-center justify-center rounded-xl " ></i></a>
                     <a href="" class="hover:scale-150 duration-300" aria-label="Visit our Instagram Page"><i class="bi bi-instagram text-white bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] flex items-center justify-center rounded-xl"></i></a>
@@ -223,36 +233,39 @@
         let deliveryEstimateResult = document.getElementById('delivery-estimate-result');
         const term1 = document.getElementById('term1');
         const term2 = document.getElementById('term2');
-        const surcharge = 1.2;
-        const smallOrderFee = 20;
+        const surcharge = 1.2; // admin fee for the calculation
+        const smallOrderFee = 20; //only applied if price is below £50
 
+        // event listener for when the submit button is clicked
         deliveryEstimateButton.addEventListener('click', () => {
             let weight = parseInt(document.getElementById("weight-input").value);
             let distance = parseInt(document.getElementById("distance-input").value);
-            let result = (weight * distance) * surcharge;
-            if (result <= 50) {
-                result += smallOrderFee
-                deliveryEstimateResult.innerHTML = String("£" + result);
-                term1.classList.remove('hidden');
-                term2.classList.remove('hidden');
-            } else if (isNaN(result)) {
+            let result = (weight * distance) * surcharge; // main calculation for the result
+            if (result <= 50) { // checks if the price is below £50
+                result += smallOrderFee // applies the fee is it is found to be below £50
+                deliveryEstimateResult.innerHTML = String("£" + result); // manipulates the <p> element
+                term1.classList.remove('hidden'); // unhides the T&C no.1
+                term2.classList.remove('hidden'); // unhides the T&C no.2
+            } else if (isNaN(result)) { // if the user doesnt input anything and clicks submit this is a error catcher to provide 0 instead of isNaN
                 deliveryEstimateResult.innerHTML = String("");
-            } else {
-                deliveryEstimateResult.innerHTML = String("£" + result);
-                term1.classList.remove('hidden');
-                term2.classList.remove('hidden');
+            } else { // provides the price if its already over £50
+                deliveryEstimateResult.innerHTML = String("£" + result); // manipulates the <p> element
+                term1.classList.remove('hidden'); // unhides the T&C no.1
+                term2.classList.remove('hidden'); // unhides the T&C no.2
             }
         })
     </script>
     <script>
+        // Gets the full current date and stores it as a variable for the footer
         currentDate = new Date();
-        document.getElementById('date').innerHTML = String(currentDate.getFullYear());
+        document.getElementById('date').innerHTML = String(currentDate.getFullYear()); //strips the date to only display the year rather than the full date
     </script>
     <script>
+        // A script used to stop the page refreshing when submitting the form. I created a function to do this as the 'event' call is obsolete.
         function preventReload(){
-            console.log('Used to submit the form without reloading the browser');
+            console.log('Used to submit the form without reloading the browser'); // Logs a console entry for developers to see the function is working
 
-            return false;
+            return false; // returns false to stop the browser reloading
         }
     </script>
 </body>
